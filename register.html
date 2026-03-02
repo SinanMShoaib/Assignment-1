@@ -1,0 +1,159 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>register with us</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">SkillSpark ✨</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item ms-lg-3"><a class="btn btn-primary btn-sm" href="register.html">Sign Up</a></li>
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <button id="darkModeToggle" class="btn btn-outline-light btn-sm">🌙</button>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container py-5">
+        <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow border-0">
+            <div class="card-body p-5">
+                <h2 class="text-center fw-bold mb-4">Student Registration</h2>
+                
+                <div id="formAlert" class="alert alert-success d-none" role="alert">
+                Registration Successful! Welcome to SkillSpark.
+                </div>
+
+                <form id="registerForm" class="needs-validation" novalidate>
+                <div class="row mb-3">
+                    <div class="col-md-6 col-sm-12 mb-3 mb-md-0">
+                    <label for="firstName" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="firstName" required>
+                    <div class="invalid-feedback">Please enter your first name.</div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                    <label for="lastName" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" required>
+                    <div class="invalid-feedback">Please enter your last name.</div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <div class="input-group">
+                    <span class="input-group-text">@</span>
+                    <input type="email" class="form-control" id="email" required>
+                    <div class="invalid-feedback">Please enter a valid email.</div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="courseSelect" class="form-label">Select Course</label>
+                    <select class="form-select" id="courseSelect" required>
+                    <option value="" selected disabled>Choose...</option>
+                    <option value="web">Web Development</option>
+                    <option value="app">App Development</option>
+                    <option value="uiux">UI/UX Design</option>
+                    <option value="ai">AI & Data Science</option>
+                    </select>
+                    <div class="invalid-feedback">Please select a course.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label d-block">Study Mode</label>
+                    <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="studyMode" id="online" value="online" required>
+                    <label class="form-check-label" for="online">Online</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="studyMode" id="hybrid" value="hybrid">
+                    <label class="form-check-label" for="hybrid">Hybrid</label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="idUpload" class="form-label">Upload Student ID</label>
+                    <input class="form-control" type="file" id="idUpload" required>
+                    <div class="invalid-feedback">Please upload your ID.</div>
+                </div>
+
+                <div class="mb-4 form-check">
+                    <input type="checkbox" class="form-check-input" id="terms" required>
+                    <label class="form-check-label" for="terms">I agree to the Terms & Conditions</label>
+                    <div class="invalid-feedback">You must agree before submitting.</div>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100 btn-lg hover-card">Register Now</button>
+                </form>
+
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <button id="scrollTopBtn" title="Go to top">↑</button>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        if (!this.checkValidity()) {
+            event.stopPropagation();
+        } else {
+            document.getElementById('formAlert').classList.remove('d-none');
+            this.reset();
+            this.classList.remove('was-validated');
+            return;
+        }
+        this.classList.add('was-validated');
+        }, false);
+    </script>
+      
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+    // Dark Mode Toggle
+    const toggleBtn = document.getElementById('darkModeToggle');
+    toggleBtn.addEventListener('click', () => {
+      const htmlElement = document.documentElement;
+      if (htmlElement.getAttribute('data-bs-theme') === 'dark') {
+        htmlElement.setAttribute('data-bs-theme', 'light');
+        toggleBtn.textContent = '🌙';
+      } else {
+        htmlElement.setAttribute('data-bs-theme', 'dark');
+        toggleBtn.textContent = '☀️';
+      }
+    });
+
+    // Scroll to Top Button
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+    window.onscroll = function() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollTopBtn.style.display = "block";
+      } else {
+        scrollTopBtn.style.display = "none";
+      }
+    };
+    scrollTopBtn.addEventListener("click", function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
