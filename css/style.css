@@ -77,3 +77,13 @@ body {
   background-color: #1e293b;
   color: white;
 }
+
+.mission-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/images/BackgroundImage.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
+    padding: 100px 0; 
+    color: white !important; 
+    border-radius: 15px; 
+}
