@@ -1,5 +1,6 @@
 This site can viewed live at: https://sinanmshoaib.github.io/Assignment-1/
-Project Description
+
+Project Description:
 SkillSpark is a webpage dedicated to students, where they can sign up and learn important skills from certified industry experts. the website provides a streamlined experianced so that students can sign up and get started on learning without any time wasted. 
 
 
