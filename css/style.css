@@ -1,51 +1,79 @@
 
 :root {
-  --primary-color: #4f46e5;
-  --secondary-color: #8b5cf6;
-  --text-dark: #1f2937;
-  --light-bg: #f3f4f6;
+  --primary-color: #6366f1;   
+  --secondary-color: #a855f7;  
+  --dark-bg: #0f172a;          
+  --light-bg: #f8fafc;         
+  --card-grad: linear-gradient(135deg, #1e1b4b, #4338ca);
   --transition-speed: 0.3s ease;
 }
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   transition: background-color var(--transition-speed), color var(--transition-speed);
+  background-color: var(--light-bg);
 }
 
+
+.navbar {
+  background: rgba(15, 23, 42, 0.95) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
 
 .gradient-bg {
-  background: linear-gradient(to top, blue, purple);
-  color: white;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+  color: white !important;
 }
-
 
 .hover-card {
   transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+  border: none !important;
 }
 
 .hover-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2) !important;
 }
 
+.custom-card-grad {
+  background: var(--card-grad) !important;
+  color: white !important;
+}
 
 #scrollTopBtn {
   display: none;
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 25px;
+  right: 25px;
   z-index: 99;
   border: none;
   outline: none;
   background-color: var(--primary-color);
   color: white;
   cursor: pointer;
-  padding: 10px 15px;
+  padding: 12px 18px;
   border-radius: 50%;
-  font-size: 18px;
-  transition: background-color var(--transition-speed);
+  font-size: 20px;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+  transition: var(--transition-speed);
 }
 
 #scrollTopBtn:hover {
   background-color: var(--secondary-color);
+  transform: scale(1.1);
+}
+
+[data-bs-theme='dark'] body {
+  background-color: var(--dark-bg);
+}
+
+[data-bs-theme='dark'] .bg-light {
+  background-color: #1e293b !important;
+  color: #f8fafc !important;
+}
+
+[data-bs-theme='dark'] .card:not(.custom-card-grad) {
+  background-color: #1e293b;
+  color: white;
 }
